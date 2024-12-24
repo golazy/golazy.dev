@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOS="autocerts flattenfs lazycontext lazyservice layerfs lazyapp lazyassets lazycontroller lazydispatch lazyhttp lazyml lazysupport lazyview memfs multihttp protocolmux router lazyenv lazyplugin lazytest"
+REPOS="apptemplate autocerts flattenfs lazycontext lazyservice layerfs lazyapp lazyassets lazycontroller lazydispatch lazyhttp lazyml lazysupport lazyview memfs multihttp protocolmux router lazyenv lazyplugin lazytest"
 
 read -d '' HTMLHEAD <<'EOF'
 	<!DOCTYPE html>
