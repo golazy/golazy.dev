@@ -1,15 +1,20 @@
 # golazy.dev
 
-Marketing website and Go vanity-import host for `golazy.dev`.
+Hugo marketing website and Go vanity-import host for `golazy.dev`.
 
-The embedded server listens on `:3000` by default:
-
-```bash
-go run .
-```
-
-Set `WEBSITE_ADDR` to use another address:
+## Development
 
 ```bash
-WEBSITE_ADDR=:4173 go run .
+hugo server
 ```
+
+The development server is available at `http://localhost:1313`.
+
+## Production build
+
+```bash
+hugo --minify
+```
+
+The generated site is written to `public/`. The `CNAME` file and all other
+public assets are copied from `static/`.

@@ -1,0 +1,14 @@
+baseURL = "https://golazy.dev/"
+languageCode = "en-us"
+title = "golazy.dev"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
+
+[params]
+description = "GoLazy is a convention-first web framework for building clear, fast Go applications."
+repository = "https://github.com/golazy/golazy"
+tagline = "TOgether WE BUild."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

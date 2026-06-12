@@ -8,13 +8,10 @@
       name="go-source"
       content="golazy.dev https://github.com/golazy/golazy https://github.com/golazy/golazy/tree/main{/dir} https://github.com/golazy/golazy/blob/main{/dir}/{file}#L{line}"
     >
-    <meta
-      name="description"
-      content="GoLazy is a convention-first web framework for building clear, fast Go applications."
-    >
-    <title>golazy.dev</title>
-    <link rel="icon" href="assets/logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="{{ .Description | default site.Params.description }}">
+    <title>{{ .Title }}</title>
+    <link rel="icon" href="{{ "assets/logo.png" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -28,13 +25,13 @@
 
     <header class="site-header">
       <a class="brand" href="#" aria-label="GoLazy home">
-        <img src="assets/golazy-horizontal.svg" alt="GoLazy">
+        <img src="{{ "assets/golazy-horizontal.svg" | relURL }}" alt="GoLazy">
       </a>
       <nav aria-label="Main navigation">
         <a href="#why">Why GoLazy</a>
         <a href="#inside">Inside</a>
         <a href="#start">Get started</a>
-        <a class="nav-source" href="https://github.com/golazy/golazy">Source</a>
+        <a class="nav-source" href="{{ site.Params.repository }}">Source</a>
       </nav>
     </header>
 
@@ -254,12 +251,12 @@ listening on http://localhost:8080</code></pre>
 
     <footer>
       <a class="footer-brand" href="#">
-        <img src="assets/golazy-horizontal.svg" alt="GoLazy">
+        <img src="{{ "assets/golazy-horizontal.svg" | relURL }}" alt="GoLazy">
       </a>
-      <p class="company-tagline">TOgether WE BUild.</p>
-      <p>© 2026 GoLazy</p>
+      <p class="company-tagline">{{ site.Params.tagline }}</p>
+      <p>&copy; {{ now.Year }} GoLazy</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ "js/script.js" | relURL }}"></script>
   </body>
 </html>
