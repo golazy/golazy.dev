@@ -202,19 +202,22 @@
           <p class="section-number">04 / Get started</p>
           <h2>Hello, GoLazy.</h2>
           <p>
-            Run the sample application and open your browser. The framework
-            handles the structure; your code handles what makes the app yours.
+            Install the CLI, generate a new app, and start shaping your own
+            project structure from the sample template.
           </p>
         </div>
         <div class="terminal" aria-label="Commands to run GoLazy">
           <div class="terminal-bar">
             <span></span><span></span><span></span>
           </div>
-          <pre><code><span>$</span> lazy
-
-listening on http://localhost:8080</code></pre>
-          <button type="button" class="copy-button" data-copy="lazy">
-            Copy command
+          <pre><code><span>$</span> go install github.com/golazy/lazy
+<span>$</span> lazy new github.com/guillermo/my_app</code></pre>
+          <button
+            type="button"
+            class="copy-button"
+            data-copy="go install github.com/golazy/lazy&#10;lazy new github.com/guillermo/my_app"
+          >
+            Copy commands
           </button>
         </div>
       </section>

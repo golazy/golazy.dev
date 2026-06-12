@@ -22,6 +22,24 @@ go version
 Begin with the
 [`sample_app`](https://github.com/golazy/sample_app/tree/v0.1.1) repository.
 
+## Install the CLI and create an app
+
+Install the GoLazy command:
+
+```sh
+go install github.com/golazy/lazy
+```
+
+Create a new application from the matching `sample_app` tag:
+
+```sh
+lazy new github.com/guillermo/my_app
+```
+
+The command clones the `v0.1.1` sample app template, removes its Git history,
+renames `sample_app` references to your module path, runs `go mod tidy`, and
+verifies the generated application with `go test ./...`.
+
 ## Run the application
 
 From the sample application directory, either use the GoLazy CLI:
