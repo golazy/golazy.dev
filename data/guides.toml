@@ -24,7 +24,7 @@ description = "The framework APIs used by every request."
   [[groups.guides]]
   title = "Routing"
   slug = "routing"
-  summary = "Register standard-library routes, method guards, and public fallbacks."
+  summary = "Register routes, REST resources, and public fallbacks."
 
   [[groups.guides]]
   title = "Views and Layouts"
