@@ -1,0 +1,51 @@
+[[groups]]
+title = "Start Here"
+description = "Build a working mental model before changing the application."
+
+  [[groups.guides]]
+  title = "Getting Started"
+  path = "guides/getting-started/"
+  summary = "Run the sample application and trace one request through the stack."
+
+  [[groups.guides]]
+  title = "Application Structure"
+  path = "guides/application-structure/"
+  summary = "Understand where controllers, views, services, routes, and assets live."
+
+[[groups]]
+title = "Core Framework"
+description = "The framework APIs used by every request."
+
+  [[groups.guides]]
+  title = "Controllers"
+  path = "guides/controllers/"
+  summary = "Construct request-local controllers, run actions, and return HTTP errors."
+
+  [[groups.guides]]
+  title = "Routing"
+  path = "guides/routing/"
+  summary = "Register standard-library routes, method guards, and public fallbacks."
+
+  [[groups.guides]]
+  title = "Views and Layouts"
+  path = "guides/views-and-layouts/"
+  summary = "Render escaped template data through embedded application layouts."
+
+  [[groups.guides]]
+  title = "Services and Context"
+  path = "guides/services-and-context/"
+  summary = "Initialize shared dependencies once and resolve them explicitly."
+
+[[groups]]
+title = "Digging Deeper"
+description = "Ship and maintain complete GoLazy applications."
+
+  [[groups.guides]]
+  title = "Testing"
+  path = "guides/testing/"
+  summary = "Test packages in isolation and exercise the complete HTTP application."
+
+  [[groups.guides]]
+  title = "Embedding and Deployment"
+  path = "guides/embedding-and-deployment/"
+  summary = "Embed templates and assets, build one binary, and configure its address."

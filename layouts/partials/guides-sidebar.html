@@ -1,0 +1,19 @@
+<nav class="guides-sidebar" aria-label="All GoLazy guides">
+  <a class="guides-sidebar-home" href="{{ "guides/" | relURL }}">GoLazy Guides</a>
+  {{ range hugo.Data.guides.groups }}
+    <section>
+      <h2>{{ .title }}</h2>
+      <ul>
+        {{ range .guides }}
+          {{ $url := .path | relURL }}
+          <li>
+            <a
+              href="{{ $url }}"
+              {{ if eq $.RelPermalink $url }}aria-current="page"{{ end }}
+            >{{ .title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ end }}
+</nav>

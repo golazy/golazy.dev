@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="go-import" content="golazy.dev git https://github.com/golazy/golazy">
+<meta
+  name="go-source"
+  content="golazy.dev https://github.com/golazy/golazy https://github.com/golazy/golazy/tree/main{/dir} https://github.com/golazy/golazy/blob/main{/dir}/{file}#L{line}"
+>
+<meta name="description" content="{{ .Description | default site.Params.description }}">
+<title>{{ if .IsSection }}{{ .Title }}{{ else }}{{ .Title }} | GoLazy Guides{{ end }}</title>
+<link rel="icon" href="{{ "assets/logo.png" | relURL }}">
+<link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/guides.css" | relURL }}">

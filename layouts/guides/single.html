@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{ partial "guides-head.html" . }}
+  </head>
+  <body class="guides-body">
+    {{ partial "guides-header.html" . }}
+
+    <main id="main" class="guide-layout">
+      {{ partial "guides-sidebar.html" . }}
+
+      <article class="guide-article">
+        <header class="guide-article-header">
+          <p class="guides-kicker">{{ .Params.category }}</p>
+          <h1>{{ .Title }}</h1>
+          <p>{{ .Description }}</p>
+        </header>
+
+        {{ with .Params.outcomes }}
+          <aside class="guide-outcomes">
+            <h2>After reading this guide, you will know:</h2>
+            <ul>
+              {{ range . }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </aside>
+        {{ end }}
+
+        <details class="guide-chapters" open>
+          <summary>Chapters</summary>
+          {{ .TableOfContents }}
+        </details>
+
+        <div class="guide-content">
+          {{ .Content }}
+        </div>
+
+        <nav class="guide-pagination" aria-label="Guide pagination">
+          {{ with .NextInSection }}
+            <a class="guide-pagination-previous" href="{{ .RelPermalink }}">
+              <span>Previous</span>
+              <strong>{{ .Title }}</strong>
+            </a>
+          {{ end }}
+          {{ with .PrevInSection }}
+            <a class="guide-pagination-next" href="{{ .RelPermalink }}">
+              <span>Next</span>
+              <strong>{{ .Title }}</strong>
+            </a>
+          {{ end }}
+        </nav>
+      </article>
+    </main>
+
+    {{ partial "guides-footer.html" . }}
+  </body>
+</html>

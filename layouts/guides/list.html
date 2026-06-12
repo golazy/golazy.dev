@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{ partial "guides-head.html" . }}
+  </head>
+  <body class="guides-body">
+    {{ partial "guides-header.html" . }}
+
+    <main id="main">
+      <section class="guides-hero">
+        <div>
+          <p class="guides-kicker">GoLazy Guides</p>
+          <h1>Build the whole app.<br><span>Understand every layer.</span></h1>
+        </div>
+        <p>
+          These guides explain the conventions and framework APIs behind a
+          GoLazy application. Start with the sample app, then move into the
+          layer you need.
+        </p>
+      </section>
+
+      <section class="guides-notice" aria-label="Documentation status">
+        <strong>Work in progress.</strong>
+        <p>
+          The guides document the current <code>main</code> branch. The
+          <code>lazy</code> command is not implemented yet, so setup currently
+          starts from the sample application.
+        </p>
+      </section>
+
+      <div class="guides-catalog">
+        {{ range $groupIndex, $group := hugo.Data.guides.groups }}
+          <section class="guides-group">
+            <header>
+              <p>0{{ add $groupIndex 1 }}</p>
+              <div>
+                <h2>{{ $group.title }}</h2>
+                <span>{{ $group.description }}</span>
+              </div>
+            </header>
+            <div class="guides-cards">
+              {{ range $guideIndex, $guide := $group.guides }}
+                <a class="guide-card" href="{{ $guide.path | relURL }}">
+                  <span>{{ printf "%02d" (add $guideIndex 1) }}</span>
+                  <h3>{{ $guide.title }}</h3>
+                  <p>{{ $guide.summary }}</p>
+                  <strong>Read guide <span aria-hidden="true">→</span></strong>
+                </a>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+      </div>
+    </main>
+
+    {{ partial "guides-footer.html" . }}
+  </body>
+</html>

@@ -1,5 +1,5 @@
 baseURL = "https://golazy.dev/"
-languageCode = "en-us"
+locale = "en-US"
 title = "golazy.dev"
 disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
 
@@ -7,6 +7,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
 description = "GoLazy is a convention-first web framework for building clear, fast Go applications."
 repository = "https://github.com/golazy/golazy"
 tagline = "TOgether WE BUild."
+guidesVersion = "main"
 
 [markup]
   [markup.goldmark]
