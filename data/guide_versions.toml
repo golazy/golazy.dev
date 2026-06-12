@@ -1,6 +1,11 @@
-latest = "v0.1.0"
+latest = "v0.1.1"
+
+[[versions]]
+value = "v0.1.1"
+label = "v0.1.1"
+status = "Latest"
 
 [[versions]]
 value = "v0.1.0"
 label = "v0.1.0"
-status = "Latest"
+status = ""

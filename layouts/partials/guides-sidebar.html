@@ -1,6 +1,13 @@
 <nav class="guides-sidebar" aria-label="All GoLazy guides">
   {{ $catalog := printf "guides/%s/" .Params.version }}
+  {{ $packageDocs := printf "https://godocs.io/golazy.dev@%s" .Params.version }}
   <a class="guides-sidebar-home" href="{{ $catalog | relURL }}">GoLazy Guides</a>
+  <section>
+    <h2>Reference</h2>
+    <ul>
+      <li><a href="{{ $packageDocs }}">Package docs</a></li>
+    </ul>
+  </section>
   {{ range hugo.Data.guides.groups }}
     <section>
       <h2>{{ .title }}</h2>

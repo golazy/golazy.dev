@@ -1,4 +1,6 @@
 <a class="skip-link" href="#main">Skip to content</a>
+{{ $catalog := printf "guides/%s/" .Params.version }}
+{{ $packageDocs := printf "https://godocs.io/golazy.dev@%s" .Params.version }}
 
 <div class="guides-version-bar">
   {{ partial "guides-version-select.html" . }}
@@ -8,10 +10,10 @@
   <a class="guides-brand" href="{{ "" | relURL }}" aria-label="GoLazy home">
     <img src="{{ "assets/golazy-horizontal.svg" | relURL }}" alt="GoLazy">
   </a>
-  {{ $catalog := printf "guides/%s/" .Params.version }}
   <a class="guides-title" href="{{ $catalog | relURL }}">Guides</a>
   <nav aria-label="Guide navigation">
     <a href="{{ $catalog | relURL }}">All guides</a>
+    <a href="{{ $packageDocs }}">Package docs</a>
     <a href="{{ site.Params.repository }}">Source</a>
   </nav>
 </header>
