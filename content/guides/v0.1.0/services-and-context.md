@@ -17,7 +17,7 @@ outcomes = [
 
 ```go
 func Context(ctx context.Context) context.Context {
-    renderer, err := lazycontroller.NewRenderer(views)
+    renderer, err := controller.NewRenderer(views)
     if err != nil {
         panic(err)
     }
@@ -27,9 +27,9 @@ func Context(ctx context.Context) context.Context {
         panic(err)
     }
 
-    ctx = lazycontroller.WithRenderer(ctx, renderer)
+    ctx = controller.WithRenderer(ctx, renderer)
     ctx = postservice.WithContext(ctx, posts)
-    ctx = lazyroutes.WithPublic(ctx, http.FileServerFS(public))
+    ctx = routes.WithPublic(ctx, http.FileServerFS(public))
     return ctx
 }
 ```

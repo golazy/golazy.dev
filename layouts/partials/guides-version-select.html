@@ -1,0 +1,23 @@
+{{ $currentVersion := .Params.version }}
+{{ $slug := "" }}
+{{ if not .IsSection }}
+  {{ $slug = .File.ContentBaseName }}
+{{ end }}
+
+<label class="guides-version-select">
+  <span>Version</span>
+  <select data-guide-version aria-label="Select guide version">
+    {{ range hugo.Data.guide_versions.versions }}
+      {{ $target := printf "guides/%s/" .value }}
+      {{ if $slug }}
+        {{ $target = printf "guides/%s/%s/" .value $slug }}
+      {{ end }}
+      <option
+        value="{{ $target | relURL }}"
+        {{ if eq .value $currentVersion }}selected{{ end }}
+      >
+        {{ .label }}{{ with .status }} ({{ . }}){{ end }}
+      </option>
+    {{ end }}
+  </select>
+</label>

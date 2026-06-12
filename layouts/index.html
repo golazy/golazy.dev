@@ -31,7 +31,8 @@
         <a href="#why">Why GoLazy</a>
         <a href="#inside">Inside</a>
         <a href="#start">Get started</a>
-        <a href="{{ "guides/" | relURL }}">Guides</a>
+        {{ $latestGuides := printf "guides/%s/" hugo.Data.guide_versions.latest }}
+        <a href="{{ $latestGuides | relURL }}">Guides</a>
         <a class="nav-source" href="{{ site.Params.repository }}">Source</a>
       </nav>
     </header>
@@ -209,10 +210,10 @@
           <div class="terminal-bar">
             <span></span><span></span><span></span>
           </div>
-          <pre><code><span>$</span> go run ./cmd/app
+          <pre><code><span>$</span> lazy
 
 listening on http://localhost:8080</code></pre>
-          <button type="button" class="copy-button" data-copy="go run ./cmd/app">
+          <button type="button" class="copy-button" data-copy="lazy">
             Copy command
           </button>
         </div>

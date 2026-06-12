@@ -21,7 +21,7 @@ var Files embed.FS
 ```
 
 `app.Views` returns the `views` subtree as an `fs.FS`. Startup passes that
-filesystem to `lazycontroller.NewRenderer`.
+filesystem to `controller.NewRenderer`.
 
 The renderer requires a default layout:
 
@@ -128,5 +128,5 @@ render as markup.
 - Layout execution failures.
 - Response write failures.
 
-Return those errors from the action so `lazycontroller.Handle` can produce the
+Return those errors from the action so `controller.Handle` can produce the
 HTTP response.

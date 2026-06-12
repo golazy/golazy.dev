@@ -7,7 +7,7 @@ outcomes = [
   "How to run the current sample application.",
   "How application context, routes, controllers, and views fit together.",
   "Where to make your first application change.",
-  "Which parts of the future CLI are not available yet."
+  "How to verify an application before deployment."
 ]
 +++
 
@@ -19,8 +19,8 @@ GoLazy currently targets Go 1.26 or later. Confirm your installation:
 go version
 ```
 
-The `lazy` command is planned but not implemented yet. For now, begin with the
-[`sample_app`](https://github.com/golazy/sample_app) repository.
+Begin with the
+[`sample_app`](https://github.com/golazy/sample_app/tree/v0.1.0) repository.
 
 ## Run the application
 
@@ -47,14 +47,14 @@ application routes:
 
 ```go
 ctx := appinit.Context(context.Background())
-mux := lazyroutes.New(ctx)
+mux := routes.New(ctx)
 appinit.Draw(ctx, mux)
 ```
 
 This order matters:
 
 1. `Context` initializes the renderer, services, and public-file handler.
-2. `lazyroutes.New` creates an `http.ServeMux` with the public fallback.
+2. `routes.New` creates an `http.ServeMux` with the public fallback.
 3. `Draw` registers the application's routes on that mux.
 4. `http.Server` serves the completed handler.
 
@@ -65,7 +65,7 @@ For `GET /posts`, the route binds a controller constructor to an action:
 ```go
 mux.Handle(
     "GET /posts",
-    lazycontroller.Bind(
+    controller.Bind(
         ctx,
         posts.New,
         (*posts.PostsController).Index,
@@ -105,8 +105,8 @@ Edit `app/views/home/index.html.tpl`, restart `go run ./cmd/app`, and reload the
 home page. Templates are embedded at build time, so a running binary does not
 read changed files from disk.
 
-The future `lazy` command will provide hot reload. Until it exists, restart the
-Go process after changing Go code, templates, embedded content, or public files.
+Restart the Go process after changing Go code, templates, embedded content, or
+public files.
 
 ## Verify the application
 

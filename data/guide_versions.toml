@@ -1,0 +1,6 @@
+latest = "v0.1.0"
+
+[[versions]]
+value = "v0.1.0"
+label = "v0.1.0"
+status = "Latest"

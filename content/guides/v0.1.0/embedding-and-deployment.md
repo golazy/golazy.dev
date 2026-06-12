@@ -45,7 +45,7 @@ if err != nil {
     panic(fmt.Errorf("open embedded views: %w", err))
 }
 
-renderer, err := lazycontroller.NewRenderer(views)
+renderer, err := controller.NewRenderer(views)
 if err != nil {
     panic(fmt.Errorf("initialize renderer: %w", err))
 }
@@ -96,8 +96,7 @@ Embedded files are compiled into the executable. After changing:
 
 rebuild or restart `go run`.
 
-The planned `lazy` command will automate this development loop, but it is not
-part of the current release.
+Restart `go run ./cmd/app` after changing embedded resources.
 
 ## Deployment checklist
 

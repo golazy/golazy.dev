@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{ $latest := hugo.Data.guide_versions.latest }}
+    {{ $destination := printf "guides/%s/" $latest | relURL }}
+    {{ partial "guides-head.html" . }}
+    <link rel="canonical" href="{{ $destination }}">
+    <meta http-equiv="refresh" content="0; url={{ $destination }}">
+  </head>
+  <body class="guides-body">
+    <main class="guides-latest">
+      <p class="guides-kicker">GoLazy Guides</p>
+      <h1>Opening the latest guides.</h1>
+      <p>
+        Continue to
+        <a href="{{ $destination }}">GoLazy {{ $latest }} guides</a>.
+      </p>
+    </main>
+  </body>
+</html>

@@ -2,9 +2,10 @@
 
 Hugo marketing website and Go vanity-import host for `golazy.dev`.
 
-The site includes a Hugo-powered guide catalog under `/guides/`. Guide content
-lives in `content/guides`, navigation metadata in `data/guides.toml`, and guide
-templates in `layouts/guides`.
+The site includes versioned Hugo guides under `/guides/<version>/`. `/guides/`
+points to the latest published version. Guide content lives in
+`content/guides/<version>`, navigation metadata in `data/guides.toml`, version
+metadata in `data/guide_versions.toml`, and templates in `layouts/guides`.
 
 ## Development
 

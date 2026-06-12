@@ -118,8 +118,8 @@ in `test` and construct the same context, mux, and routes used by the executable
 
 Generic behavior belongs in the `golazy.dev` module:
 
-- `golazy.dev/lazycontroller` owns action binding, rendering, and HTTP errors.
-- `golazy.dev/lazyroutes` owns mux construction, public fallback, and method
+- `golazy.dev/controller` owns action binding, rendering, and HTTP errors.
+- `golazy.dev/routes` owns mux construction, public fallback, and method
   handling.
 
 Application packages must not be imported by the framework.

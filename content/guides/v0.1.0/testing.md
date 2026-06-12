@@ -29,7 +29,7 @@ Integration tests should use the same composition path as `main`:
 ```go
 func application() http.Handler {
     ctx := appinit.Context(context.Background())
-    mux := lazyroutes.New(ctx)
+    mux := routes.New(ctx)
     appinit.Draw(ctx, mux)
     return mux
 }

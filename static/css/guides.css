@@ -13,8 +13,58 @@
   text-align: center;
 }
 
-.guides-version-bar p {
+.guides-version-select {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.75rem;
+}
+
+.guides-version-select span {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.guides-version-select select {
+  appearance: auto;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  color: var(--ink);
+  cursor: pointer;
+  font: 800 0.78rem/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0.4rem 0.6rem;
+}
+
+.guides-version-select select:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 2px;
+}
+
+.guides-latest {
+  align-items: flex-start;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(3rem, 10vw, 10rem);
+}
+
+.guides-latest h1 {
+  font-size: clamp(4rem, 9vw, 9rem);
+  letter-spacing: -0.09em;
+  line-height: 0.8;
   margin: 0;
+  max-width: 8ch;
+}
+
+.guides-latest > p:last-child {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  line-height: 1.5;
+  margin: 3rem 0 0;
 }
 
 .guides-header {

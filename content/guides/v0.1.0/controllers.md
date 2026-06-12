@@ -52,10 +52,10 @@ the controller.
 
 ## Request-local construction
 
-Routes use `lazycontroller.Bind`:
+Routes use `controller.Bind`:
 
 ```go
-lazycontroller.Bind(
+controller.Bind(
     ctx,
     posts.New,
     (*posts.PostsController).Index,
@@ -120,10 +120,10 @@ This resolves `layouts/admin.html.tpl`.
 
 ## HTTP errors
 
-Return `lazycontroller.Error` when an expected failure needs a specific status:
+Return `controller.Error` when an expected failure needs a specific status:
 
 ```go
-return lazycontroller.Error(
+return controller.Error(
     http.StatusNotFound,
     fmt.Errorf("post %q not found", slug),
 )

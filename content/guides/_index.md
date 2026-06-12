@@ -1,4 +1,5 @@
 +++
 title = "GoLazy Guides"
-description = "Learn how GoLazy applications are structured, tested, and deployed."
+description = "The latest GoLazy guides."
+layout = "latest"
 +++

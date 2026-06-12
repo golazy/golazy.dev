@@ -17,11 +17,11 @@ Initialize the application context before creating routes:
 
 ```go
 ctx := appinit.Context(context.Background())
-mux := lazyroutes.New(ctx)
+mux := routes.New(ctx)
 appinit.Draw(ctx, mux)
 ```
 
-`lazyroutes.New` creates an `http.ServeMux` and installs the embedded public
+`routes.New` creates an `http.ServeMux` and installs the embedded public
 handler at `/`.
 
 ## Draw application routes
@@ -37,7 +37,7 @@ A route combines a Go 1.22+ method pattern with a bound controller action:
 ```go
 mux.Handle(
     "GET /posts",
-    lazycontroller.Bind(
+    controller.Bind(
         ctx,
         posts.New,
         (*posts.PostsController).Index,
@@ -55,7 +55,7 @@ Declare path values in braces:
 ```go
 mux.Handle(
     "GET /posts/{param}",
-    lazycontroller.Bind(
+    controller.Bind(
         ctx,
         posts.New,
         (*posts.PostsController).Show,
@@ -78,7 +78,7 @@ Register an explicit method fallback for application paths:
 ```go
 mux.Handle(
     "/posts",
-    lazyroutes.MethodNotAllowed(http.MethodGet),
+    routes.MethodNotAllowed(http.MethodGet),
 )
 ```
 
@@ -92,7 +92,7 @@ path.
 The application context installs the public handler:
 
 ```go
-ctx = lazyroutes.WithPublic(
+ctx = routes.WithPublic(
     ctx,
     http.FileServerFS(public),
 )
@@ -111,7 +111,7 @@ Construct the complete handler without a network listener:
 ```go
 func application() http.Handler {
     ctx := appinit.Context(context.Background())
-    mux := lazyroutes.New(ctx)
+    mux := routes.New(ctx)
     appinit.Draw(ctx, mux)
     return mux
 }

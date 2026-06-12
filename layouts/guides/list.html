@@ -20,11 +20,10 @@
       </section>
 
       <section class="guides-notice" aria-label="Documentation status">
-        <strong>Work in progress.</strong>
+        <strong>Versioned documentation.</strong>
         <p>
-          The guides document the current <code>main</code> branch. The
-          <code>lazy</code> command is not implemented yet, so setup currently
-          starts from the sample application.
+          These guides document GoLazy <code>{{ .Params.version }}</code>.
+          Choose another published release from the version selector.
         </p>
       </section>
 
@@ -40,7 +39,8 @@
             </header>
             <div class="guides-cards">
               {{ range $guideIndex, $guide := $group.guides }}
-                <a class="guide-card" href="{{ $guide.path | relURL }}">
+                {{ $guideURL := printf "guides/%s/%s/" $.Params.version $guide.slug }}
+                <a class="guide-card" href="{{ $guideURL | relURL }}">
                   <span>{{ printf "%02d" (add $guideIndex 1) }}</span>
                   <h3>{{ $guide.title }}</h3>
                   <p>{{ $guide.summary }}</p>
